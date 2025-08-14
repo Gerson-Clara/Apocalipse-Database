@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS Arma (
 CREATE TABLE IF NOT EXISTS Comida (
   cod_comida INT AUTO_INCREMENT PRIMARY KEY,
   tipo VARCHAR(100),
-  peso DECIMAL(10,3) NOT NULL,          -- ADICIONADO: campo peso
+  peso DECIMAL(10,3) NOT NULL,
   data_validade DATE,
   id_armazem INT NOT NULL,
   INDEX idx_comida_armazem (id_armazem),
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS Remedio (
 CREATE TABLE IF NOT EXISTS Sobrevivente (
   id_sobrevivente INT AUTO_INCREMENT PRIMARY KEY,
   idade INT NOT NULL,
-  saude VARCHAR(100),
+  saude ENUM('saudável','incapacitado') NOT NULL DEFAULT 'saudável',
   id_casa INT NOT NULL,
   INDEX idx_sobrevivente_casa (id_casa),
   CONSTRAINT fk_sobrevivente_casa FOREIGN KEY (id_casa)
@@ -84,8 +84,8 @@ CREATE TABLE IF NOT EXISTS Sobrevivente (
 ) ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS Trabalhador (
-  id_sobrevivente INT PRIMARY KEY,          -- ADICIONADO: shared PK
-  id_instalacao_trabalho INT NULL,          -- ADICIONADO: FK (pode ser NULL = desempregado)
+  id_sobrevivente INT PRIMARY KEY,
+  id_instalacao_trabalho INT NULL,
   INDEX idx_trabalhador_local (id_instalacao_trabalho),
   CONSTRAINT fk_trabalhador_sobrevivente FOREIGN KEY (id_sobrevivente)
     REFERENCES Sobrevivente(id_sobrevivente) ON DELETE CASCADE,
