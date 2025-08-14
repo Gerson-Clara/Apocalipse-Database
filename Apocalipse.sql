@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS Remedio (
 CREATE TABLE IF NOT EXISTS Sobrevivente (
   id_sobrevivente INT AUTO_INCREMENT PRIMARY KEY,
   idade INT NOT NULL,
-  saude ENUM('saudável','incapacitado') NOT NULL DEFAULT 'saudável',
+  saude ENUM('saudavel','doente') NOT NULL DEFAULT 'saudavel',
   id_casa INT NOT NULL,
   INDEX idx_sobrevivente_casa (id_casa),
   CONSTRAINT fk_sobrevivente_casa FOREIGN KEY (id_casa)
