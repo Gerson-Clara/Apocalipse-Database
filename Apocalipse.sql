@@ -514,8 +514,8 @@ INSERT INTO Clinica (cod_instalacao, num_trabalhadores, num_pacientes, qtd_remed
 (5,0,0,0);
 
 INSERT INTO Armazem (cod_instalacao, kg_comida, ltr_agua, qtd_armas) VALUES
-(6,0.000,0.000,0),
-(7,0.000,0.000,0);
+(6,0.000,130.500,0),
+(7,0.000,70.900,0);
 
 INSERT INTO Casa (cod_instalacao, num, cap_max, num_sobreviventes) VALUES
 (8,101,4,0),
@@ -700,6 +700,24 @@ INSERT INTO Remedio (utilidade, data_validade, id_clinica) VALUES
 ('imunoestimulante','2027-05-05',5),
 ('suero','2024-01-01',5),
 ('antifungico','2026-11-11',5);
+
+INSERT INTO Comida (tipo, peso, data_validade, id_armazem) VALUES
+('enlatado de milho', 2.003, '2025-10-31', 6),
+('arroz', 25.000, '2026-01-01', 6),
+('feijao', 10.500, '2025-09-15', 6),
+('macarrao', 5.250, '2027-03-10', 6),
+('batata desidratada', 8.000, '2024-12-01', 6),
+('farinha', 20.000, '2026-06-01', 6),
+('leite em po', 7.500, '2025-05-10', 6),
+('enlatado de ervilha', 1.200, '2025-11-20', 6),
+('arroz', 30.000, '2026-01-01', 7),
+('feijao', 12.000, '2025-06-01', 7),
+('macarrao', 6.000, '2027-05-05', 7),
+('leite condensado', 3.000, '2025-09-01', 7),
+('oleo de cozinha', 10.000, '2026-10-10', 7),
+('sopa desidratada', 4.250, '2024-11-11', 7),
+('enlatado de atum', 2.500, '2026-08-08', 7);
+
 
 SELECT * FROM casa;
 
