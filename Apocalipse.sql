@@ -700,3 +700,45 @@ INSERT INTO Remedio (utilidade, data_validade, id_clinica) VALUES
 ('imunoestimulante','2027-05-05',5),
 ('suero','2024-01-01',5),
 ('antifungico','2026-11-11',5);
+
+SELECT * FROM casa;
+
+-- (1) Listar todas as casas com sua capacidade e sobreviventes
+SELECT num AS Numero_Casa, cap_max AS Capacidade, num_sobreviventes AS Ocupacao
+FROM casa;
+
+-- (2) Mostrar sobreviventes e sua casa
+SELECT s.id_sobrevivente, s.idade, s.saude, c.num AS Casa
+FROM Sobrevivente s
+JOIN Casa c ON s.num_casa = c.num;
+
+-- (3) Listar trabalhadores e onde trabalham
+SELECT s.id_sobrevivente, s.idade, i.funcao AS Local_Trabalho
+FROM Sobrevivente s
+JOIN Trabalhador t ON s.id_sobrevivente = t.id_sobrevivente
+JOIN Instalacao i ON t.local_trabalho = i.cod_instalacao;
+
+-- (4) Listar armas e o armazém onde estão
+SELECT a.tipo, a.qtd_municao, ar.cod_instalacao AS Armazem
+FROM Arma a
+JOIN Armazem ar ON a.id_armazem = ar.cod_instalacao;
+
+-- (5) Listar remédios e a clínica onde estão
+SELECT r.utilidade, r.data_validade, c.qtd_remedios, c.cod_instalacao
+FROM Remedio r
+JOIN Clinica c ON r.id_clinica = c.cod_instalacao;
+
+-- (6) Quantos sobreviventes há por casa
+SELECT c.num, COUNT(s.id_sobrevivente) AS Total_Sobreviventes
+FROM Casa c
+LEFT JOIN Sobrevivente s ON c.num = s.num_casa
+GROUP BY c.num;
+
+-- EXTRA (7) Listar o que tem em um armazém e clínica (armas + comida + remédios)
+SELECT i.funcao, a.tipo AS Arma, a.qtd_municao, ar.kg_comida, r.utilidade AS Remedio, r.data_validade
+FROM Instalacao i
+LEFT JOIN Armazem ar ON i.cod_instalacao = ar.cod_instalacao
+LEFT JOIN Arma a ON a.id_armazem = ar.cod_instalacao
+LEFT JOIN Clinica cl ON i.cod_instalacao = cl.cod_instalacao
+LEFT JOIN Remedio r ON r.id_clinica = cl.cod_instalacao
+WHERE i.cod_instalacao IN (4,5,6,7);
