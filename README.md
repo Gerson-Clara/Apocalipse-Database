@@ -1,4 +1,4 @@
-# Relatório Final - Apocalipse BD  
+#Apocalipse BD  
 
 **Autores:**  
 [Carlos Henrique Goebel Teixeira Furtado](https://github.com/CarlosHFurtado) <br>
