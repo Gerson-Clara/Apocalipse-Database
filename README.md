@@ -1,12 +1,12 @@
 # Relatório Final - Apocalipse BD  
 
 **Autores:**  
-- Carlos Henrique Goebel Teixeira Furtado  
-- Gerson Farias Clara  
-- Gustavo Domenech de Souza  
+[Carlos Henrique Goebel Teixeira Furtado](https://github.com/CarlosHFurtado) <br>
+[Gerson Farias Clara](https://github.com/Gerson-Clara) <br>  
+[Gustavo Domenech](https://github.com/GustavoDomenech/)
 
-**Título:**  
-Um projeto de banco de dados aplicado a um mundo pós-apocalíptico fictício.  
+**Um projeto de banco de dados aplicado a um mundo pós-apocalíptico fictício.**  
+
 
 
 
