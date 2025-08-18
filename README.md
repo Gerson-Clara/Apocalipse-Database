@@ -2,7 +2,7 @@
 
 **Autores:**  
 [Carlos Henrique Goebel Teixeira Furtado](https://github.com/CarlosHFurtado) <br>
-[Gerson Farias Clara](https://github.com/Gerson-Clara) <br>  
+[Gerson Farias Clara](https://github.com/Gerson-Clara) <br>
 [Gustavo Domenech](https://github.com/GustavoDomenech/)
 
 **Um projeto de banco de dados aplicado a um mundo pós-apocalíptico fictício.**  
